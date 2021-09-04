@@ -7,4 +7,5 @@ const {
 
 route.get('/api/v1/', getAll)
 
+
 module.exports = route
