@@ -1,0 +1,12 @@
+.card {
+	color: var(--dark);
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	border-radius: 4px;
+	margin: .25rem;
+	padding: 8px;
+}
+
+.card:hover {
+	cursor: pointer;
+	background-color: var(--gray);
+}
