@@ -2,6 +2,7 @@
 	color: var(--dark);
 	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 	border-radius: 4px;
+	border: 1px solid var(--gray-dark);
 	margin: .25rem;
 	padding: 8px;
 }
@@ -9,4 +10,26 @@
 .card:hover {
 	cursor: pointer;
 	background-color: var(--gray);
+}
+
+.card-selected {
+	border: 1px solid var(--green);
+}
+
+.card-bad {
+	background-color: var(--red);
+}
+
+.card-bad:hover {
+	filter: brightness(.85);
+	background-color: var(--red);
+}
+
+.card-correct {
+	background-color: var(--green);
+}
+
+.card-correct:hover {
+	background-color: var(--green);
+	filter: brightness(.85);
 }

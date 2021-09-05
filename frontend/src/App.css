@@ -4,6 +4,7 @@
 	--green: #71EFA3;
 	--red: #ef7171;
 	--gray: #e9e9e9;
+	--gray-dark: #8f8f8f;
 }
 
 * {
@@ -17,11 +18,4 @@ html, body {
 
 h1 {
 	text-align: center;
-}
-
-.container {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: repeat(2, 64px);
-	padding: .5rem;
 }
