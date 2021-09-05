@@ -10,4 +10,12 @@ const questionSchema = new Schema({
 	answers: [answersSchema]
 })
 
+questionSchema.set('toJSON', {
+	transform: (doc, ret) => {
+		ret.id = ret._id
+		delete ret._id
+		delete ret.__v
+	}	
+})
+
 module.exports = new model('Question', questionSchema)

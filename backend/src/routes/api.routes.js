@@ -2,10 +2,9 @@ const { Router } = require('express')
 const route = Router()
 
 const {
-	getAll
-} = require('../controllers/api.controller')
+	getAllQuestions
+} = require('../controllers/api/questions.controller')
 
-route.get('/api/v1/', getAll)
-
+route.get('/api/v1/questions', getAllQuestions)
 
 module.exports = route
