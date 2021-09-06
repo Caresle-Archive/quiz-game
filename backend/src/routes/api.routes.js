@@ -8,7 +8,8 @@ const {
 
 // import score controllers
 const {
-	getAllScores
+	getAllScores,
+	newScore
 } = require('../controllers/api/score.controller')
 
 // questions routes
@@ -16,5 +17,7 @@ route.get('/api/v1/questions', getAllQuestions)
 
 // score routes
 route.get('/api/v1/scores', getAllScores)
+
+route.post('/api/v1/scores', newScore)
 
 module.exports = route

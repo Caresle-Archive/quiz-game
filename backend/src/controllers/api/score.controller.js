@@ -5,6 +5,15 @@ const getAllScores = async (req, res) => {
 	res.json(response)
 }
 
+const newScore = async (req, res) => {
+	const { name, score } = req.body
+	Score.create({
+		name: name,
+		score: score
+	}).then(() => res.status(201).end())
+}
+
 module.exports = {
-	getAllScores
+	getAllScores,
+	newScore
 }
