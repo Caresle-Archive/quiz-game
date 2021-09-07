@@ -19,3 +19,32 @@ html, body {
 h1 {
 	text-align: center;
 }
+
+#button-container {
+	display: grid;
+	justify-self: center;
+}
+
+.btn {
+	background-color: var(--green);
+	border: 1px solid var(--green);
+	border-radius: 4px;
+	color: var(--dark);
+	padding: 1rem;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.btn:hover {
+	cursor: pointer;
+	filter: brightness(110%);
+}
+
+.btn-disabled {
+	background-color: var(--gray-dark);
+	border: 1px solid var(--gray-dark);
+}
+
+.btn-disabled:hover {
+	filter: brightness(100%);
+}

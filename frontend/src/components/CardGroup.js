@@ -3,7 +3,8 @@ import Card from './Card'
 
 import './CardGroup.css'
 
-const CardGroup = () => {
+const CardGroup = ({ questions, current }) => {
+	
 	const handleCardClick = (e) => {
 		const parent = (e.target.tagName !== 'SPAN') ?
 			e.target : e.target.parentNode

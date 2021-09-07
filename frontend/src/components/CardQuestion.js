@@ -1,7 +1,7 @@
-const CardQuestion = () => {
+const CardQuestion = ({ question }) => {
   return (
     <div>
-      <h2>Question</h2>
+      <h2>{question}</h2>
     </div>
   )
 }
