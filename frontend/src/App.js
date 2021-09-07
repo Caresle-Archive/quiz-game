@@ -1,5 +1,6 @@
 import './App.css'
 import CardGroup from './components/CardGroup'
+import NextQuestion from './components/NextQuestion'
 import { useState, useEffect } from 'react'
 
 const url = 'http://localhost:3001/api/v1/questions'
@@ -22,6 +23,7 @@ const App = () => {
       console.log('disabled')
     }
   }
+  
   if (currentQuestion < 0) {
     return <h1>Loading question</h1>
   } else {
@@ -29,9 +31,7 @@ const App = () => {
       <div>
         <h1>Quiz Game</h1>
         <CardGroup questions={questions} current={currentQuestion}/>
-        <div id="button-container">
-          <button className="btn btn-disabled" onClick={nextQuestion}>Continue</button>
-        </div>
+        <NextQuestion nextQuestion={nextQuestion} />
       </div>
     )
   }
