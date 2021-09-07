@@ -4,7 +4,7 @@ import Card from './Card'
 import './CardGroup.css'
 
 const CardGroup = ({ questions, current }) => {
-	
+	const { question, answers } = questions[current]
 	const handleCardClick = (e) => {
 		const parent = (e.target.tagName !== 'SPAN') ?
 			e.target : e.target.parentNode
@@ -13,12 +13,11 @@ const CardGroup = ({ questions, current }) => {
 
 	return (
 		<div>
-			<CardQuestion />
+			<CardQuestion question={question}/>
 			<div className="container">
-				<Card click={handleCardClick} />
-				<Card click={handleCardClick} />
-				<Card click={handleCardClick} />
-				<Card click={handleCardClick} />
+				{answers.map((ele, ind) => {
+					return <Card key={`card${ind}`} click={handleCardClick} answer={ele.answer}/>
+				})}
 			</div>
 		</div>
 	)
