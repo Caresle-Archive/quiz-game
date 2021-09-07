@@ -41,6 +41,7 @@ h1 {
 }
 
 .btn-disabled {
+	pointer-events: none;
 	background-color: var(--gray-dark);
 	border: 1px solid var(--gray-dark);
 }

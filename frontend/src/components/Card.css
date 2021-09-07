@@ -12,11 +12,20 @@
 	background-color: var(--gray);
 }
 
+.card-disable {
+	pointer-events: none;
+
+	opacity: 0.85;
+	background-color: #ccc;
+	border: 1px solid #ccc;
+}
+
 .card-selected {
 	border: 1px solid var(--green);
 }
 
 .card-bad {
+	border: 1px solid var(--red);
 	background-color: var(--red);
 }
 
@@ -26,6 +35,7 @@
 }
 
 .card-correct {
+	border: 1px solid var(--green);
 	background-color: var(--green);
 }
 

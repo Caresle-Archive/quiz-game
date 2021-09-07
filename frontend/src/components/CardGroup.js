@@ -10,7 +10,24 @@ const CardGroup = ({ questions, current }) => {
 		const parent = (e.target.tagName !== 'SPAN') ?
 			e.target : e.target.parentNode
 		parent.classList.add('card-selected')
-		console.log(parent, isCorrect)
+		const cardElements = document.querySelectorAll('.card')
+		
+		cardElements.forEach(ele => {
+			if (!ele.classList.contains('card-selected')) {
+				ele.classList.add('card-disable')
+			}
+		})
+		
+		if (isCorrect) {
+			parent.classList.remove('card-selected')
+			parent.classList.add('card-correct')
+		} else {
+			parent.classList.remove('card-selected')
+			parent.classList.add('card-bad')
+		}
+
+		const btn = document.querySelector('.btn')
+		btn.classList.remove('btn-disabled')
 	}
 
 	return (
