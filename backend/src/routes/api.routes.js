@@ -20,4 +20,9 @@ route.get('/api/v1/scores', getAllScores)
 
 route.post('/api/v1/scores', newScore)
 
+route.post('/api/test', (req, res) => {
+	console.log('api test')
+	res.status(200).end()
+})
+
 module.exports = route
