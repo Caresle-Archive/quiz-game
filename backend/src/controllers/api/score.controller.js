@@ -6,11 +6,12 @@ const getAllScores = async (req, res) => {
 }
 
 const newScore = async (req, res) => {
-	const { name, score } = req.body
+	const { name_input, score_input } = req.body
 	Score.create({
-		name: name,
-		score: score
-	}).then(() => res.status(201).end())
+		name: name_input,
+		score: parseInt(score_input)
+	}).then(() => console.log('score saved'))
+	res.status(200).redirect('http://localhost:3000')
 }
 
 module.exports = {
