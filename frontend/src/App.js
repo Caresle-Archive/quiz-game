@@ -4,7 +4,7 @@ import './App.css'
 // Import components
 import CardGroup from './components/cards/CardGroup'
 import NextQuestion from './components/NextQuestion'
-import ScoreForm from './components/score/ScoreForm'
+import ScoreManager from './components/score/ScoreManager'
 
 const url = 'http://localhost:3001/api/v1/questions'
 
@@ -50,7 +50,7 @@ const App = () => {
       </div>
     )
   } else {
-    render = <ScoreForm />
+    render = <ScoreManager />
   }
   return render
 }
