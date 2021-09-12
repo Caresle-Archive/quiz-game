@@ -4,13 +4,18 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 
+const corsOptions = {
+	origin: '*',
+	exposedHeaders: []
+}
+
 const PORT = process.env.PORT || 3001
 
 // routes imports
 const apiRoutes = require('./routes/api.routes')
 
 //middlewares
-app.use(cors())
+app.use(cors(corsOptions))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
