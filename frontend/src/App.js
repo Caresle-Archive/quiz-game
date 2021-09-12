@@ -4,7 +4,7 @@ import './App.css'
 // Import components
 import CardGroup from './components/cards/CardGroup'
 import NextQuestion from './components/NextQuestion'
-import ScoreForm from './components/ScoreForm'
+import ScoreForm from './components/score/ScoreForm'
 
 const url = 'http://localhost:3001/api/v1/questions'
 
