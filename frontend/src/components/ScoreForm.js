@@ -6,7 +6,7 @@ const ScoreForm = () => {
 		console.log('handler change')
 	}
 	
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault()
 		console.log('hey')
 		const nameInput = document.getElementById('name-input').value
@@ -14,16 +14,17 @@ const ScoreForm = () => {
 			name: nameInput,
 			score_input: 10
 		}
-		fetch(urlScores, {
+		const response = await fetch(urlScores, {
 			method: 'POST',
 			mode: 'cors',
+			credentials: 'omit',
 			headers: {
 				'Content-Type': 'application/json',
-				'Access-Control-Allow-Origin': urlScores
+				'Access-Control-Allow-Origin': '*'
 			},
 			body: JSON.stringify(data)
-		}).then(response => response.json())
-			.then(data => console.log(data))
+		})
+		console.log(response.json())
 	}
 
 	return (

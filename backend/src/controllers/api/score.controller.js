@@ -10,8 +10,12 @@ const newScore = async (req, res) => {
 	Score.create({
 		name: name_input,
 		score: parseInt(score_input)
-	}).then(() => console.log('score saved'))
-	res.status(200).redirect('http://localhost:3000')
+	})
+	// 	.then(data => console.log(data))
+	// 	.then(data => res.json(data).status(201))
+	res.status(201)
+	res.json({name: 'hola'}).end()
+	// res.status(200).end()
 }
 
 module.exports = {

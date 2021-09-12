@@ -6,7 +6,7 @@ const cors = require('cors')
 
 const corsOptions = {
 	origin: '*',
-	exposedHeaders: []
+	allowedHeaders: ['Content-Type', 'Access-Control-Allow-Origin']
 }
 
 const PORT = process.env.PORT || 3001
