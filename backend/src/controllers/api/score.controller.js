@@ -5,6 +5,11 @@ const getAllScores = async (req, res) => {
 	res.json(response)
 }
 
+const getTopScores = async (req, res) => {
+	const response = await Score.find().sort({score: -1}).limit(10)
+	res.json(response)
+}
+
 const newScore = async (req, res) => {
 	const { name_input, score_input } = req.body
 	const response = await Score.create({
@@ -17,5 +22,6 @@ const newScore = async (req, res) => {
 
 module.exports = {
 	getAllScores,
+	getTopScores,
 	newScore
 }

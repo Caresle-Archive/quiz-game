@@ -3,6 +3,7 @@ const ScoreItem = ({ obj, ind }) => {
 	if (ind % 2 === 0) {
 		return (
 			<tr className="color-row">
+				<td>{ind + 1}</td>
 				<td>{name}</td>
 				<td>{score}</td>
 		</tr>
@@ -10,6 +11,7 @@ const ScoreItem = ({ obj, ind }) => {
 	} else {
 		return (
 			<tr>
+				<td>{ind + 1}</td>
 				<td>{name}</td>
 				<td>{score}</td>
 			</tr>

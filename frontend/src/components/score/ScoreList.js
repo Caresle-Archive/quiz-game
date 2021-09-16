@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 
 
 const ScoreList = () => {
-	const urlScores = 'http://localhost:3001/api/v1/scores'
+	const urlScores = 'http://localhost:3001/api/v1/topscores'
 	const [scoreItems, setScoreItems] = useState([])
 	useEffect(() => {
 		fetch(urlScores)
@@ -16,6 +16,7 @@ const ScoreList = () => {
 		<table>
 			<thead>
 				<tr>
+					<th>#</th>
 					<th>Name</th>
 					<th>Score</th>
 				</tr>
