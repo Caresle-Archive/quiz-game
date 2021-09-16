@@ -16,3 +16,6 @@ Content-Type: application/json
 	"name": "Hi",
 	"score": 2
 }
+
+###
+DELETE http://localhost:3001/api/v1/scores

@@ -3,7 +3,7 @@ import './ScoreList.css'
 import { useEffect, useState } from "react"
 
 
-const ScoreList = ({restartGame}) => {
+const ScoreList = ({restartGame, deleteScore}) => {
 	const urlScores = 'http://localhost:3001/api/v1/topscores'
 	const [scoreItems, setScoreItems] = useState([])
 	useEffect(() => {
@@ -28,6 +28,7 @@ const ScoreList = ({restartGame}) => {
 				</tbody>
 			</table>
 			<button id="restart" className="btn" onClick={restartGame}>New game</button>
+			<button id="delete-score" className="btn btn-danger" onClick={deleteScore}>Delete scores</button>
 		</div>
 	)
 }

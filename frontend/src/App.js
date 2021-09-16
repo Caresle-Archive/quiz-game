@@ -51,6 +51,14 @@ const App = () => {
     setCurrentQuestion(0)
   }
 
+  const deleteScores = () => {
+    console.log('delete score')
+    fetch('http://localhost:3001/api/v1/scores', {
+      method: 'DELETE'
+    })
+    restartGame()
+  }
+
   if (currentQuestion < 0 && !scoreRender) {
     render = <h1>Loading question</h1>
   } else if (!scoreRender){
@@ -62,7 +70,7 @@ const App = () => {
       </div>
     )
   } else {
-    render = <ScoreManager scoreValue={scoreValue} restartGame={restartGame}/>
+    render = <ScoreManager scoreValue={scoreValue} restartGame={restartGame} deleteScore={deleteScores}/>
   }
   return render
 }

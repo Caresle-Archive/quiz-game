@@ -10,7 +10,8 @@ const {
 const {
 	getAllScores,
 	getTopScores,
-	newScore
+	newScore,
+	deleteScore
 } = require('../controllers/api/score.controller')
 
 // questions routes
@@ -22,5 +23,7 @@ route.get('/api/v1/scores', getAllScores)
 route.get('/api/v1/topscores', getTopScores)
 
 route.post('/api/v1/scores', newScore)
+
+route.delete('/api/v1/scores', deleteScore)
 
 module.exports = route

@@ -41,6 +41,11 @@ h1 {
 	filter: brightness(110%);
 }
 
+.btn-danger {
+	background-color: var(--red);
+	border: 1px solid var(--red);
+}
+
 .btn-disabled {
 	pointer-events: none;
 	background-color: var(--gray-dark);

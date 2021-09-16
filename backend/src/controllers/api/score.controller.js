@@ -20,8 +20,15 @@ const newScore = async (req, res) => {
 	res.json(response).end()
 }
 
+const deleteScore = async (req, res) => {
+	const response = await Score.deleteMany({})
+	res.status(204)
+	res.json(response)
+}
+
 module.exports = {
 	getAllScores,
 	getTopScores,
-	newScore
+	newScore,
+	deleteScore
 }
