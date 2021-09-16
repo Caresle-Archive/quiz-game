@@ -2,7 +2,7 @@
 import './ScoreForm.css'
 
 const ScoreForm = ({ changeToList }) => {
-	const urlScores = "http://localhost:3001/api/v1/test"
+	const urlScores = "http://localhost:3001/api/v1/scores"
 	const handleChange = () => {
 		console.log('handler change')
 	}
@@ -24,7 +24,6 @@ const ScoreForm = ({ changeToList }) => {
 			},
 			body: JSON.stringify(data)
 		}).then(response => response.json())
-			.then(data =>  console.log(data))
 			.then(() => changeToList())
 		
 	}

@@ -1,25 +1,16 @@
 import ScoreItem from "./ScoreItem"
 import './ScoreList.css'
+import { useEffect, useState } from "react"
 
 
 const ScoreList = () => {
-	const scoreItems = [
-		{
-			id: 1,
-			name: 'holis',
-			score: 3
-		},
-		{
-			id: 2,
-			name: 'yess',
-			score: 2
-		},
-		{
-			id: 3,
-			name: 'ccc',
-			score: 2
-		}
-	]
+	const urlScores = 'http://localhost:3001/api/v1/scores'
+	const [scoreItems, setScoreItems] = useState([])
+	useEffect(() => {
+		fetch(urlScores)
+			.then(response => response.json())
+			.then(data => setScoreItems([...data]))
+	}, [])
 
 	return (
 		<table>

@@ -18,6 +18,6 @@ route.get('/api/v1/questions', getAllQuestions)
 // score routes
 route.get('/api/v1/scores', getAllScores)
 
-route.post('/api/v1/test', newScore)
+route.post('/api/v1/scores', newScore)
 
 module.exports = route
