@@ -1,18 +1,19 @@
 
 import './ScoreForm.css'
 
-const ScoreForm = ({ changeToList }) => {
+const ScoreForm = ({ changeToList, scoreValue }) => {
 	const urlScores = "http://localhost:3001/api/v1/scores"
 	const handleChange = () => {
-		console.log('handler change')
+		console.log(scoreValue)
 	}
 	
 	const handleSubmit = (e) => {
 		e.preventDefault()
 		const nameInput = document.getElementById('name-input').value
+		const scoreInput = document.getElementById('score-input').value
 		const data = {
 			name_input: nameInput,
-			score_input: 10
+			score_input: scoreInput
 		}
 		fetch(urlScores, {
 			method: 'POST',
@@ -45,7 +46,8 @@ const ScoreForm = ({ changeToList }) => {
 			<input
 				type="text"
 				hidden
-				value="1"
+				value={scoreValue}
+				id="score-input"
 				name="score_input"
 				onChange={handleChange}
 			>

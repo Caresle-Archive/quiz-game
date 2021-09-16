@@ -13,7 +13,9 @@ const App = () => {
   const [questions, setQuestions] = useState([])
   const [currentQuestion, setCurrentQuestion] = useState(-1)
   const [scoreRender, setScoreRender] = useState(false)
+  const [scoreValue, setScoreValue] = useState(0)
   let render
+  
   useEffect(() => {
     fetch(url)
       .then(response => response.json())
@@ -26,10 +28,14 @@ const App = () => {
     
     const cards = document.querySelectorAll('.card-group')
     cards.forEach(ele => {
+      if (ele.classList.contains('card-correct')) {
+        setScoreValue(scoreValue + 1)
+      }
       ele.classList.replace('card-disable', 'card')
       ele.classList.replace('card-correct', 'card')
       ele.classList.replace('card-bad', 'card')
     })
+
     if (actualQuestion + 1 <= questions.length - 1) {
       setCurrentQuestion(actualQuestion + 1)
       e.target.classList.add('btn-disabled')
@@ -50,7 +56,7 @@ const App = () => {
       </div>
     )
   } else {
-    render = <ScoreManager />
+    render = <ScoreManager scoreValue={scoreValue} />
   }
   return render
 }
