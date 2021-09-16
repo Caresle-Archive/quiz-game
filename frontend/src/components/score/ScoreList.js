@@ -1,4 +1,6 @@
 import ScoreItem from "./ScoreItem"
+import './ScoreList.css'
+
 
 const ScoreList = () => {
 	const scoreItems = [
@@ -11,6 +13,11 @@ const ScoreList = () => {
 			id: 2,
 			name: 'yess',
 			score: 2
+		},
+		{
+			id: 3,
+			name: 'ccc',
+			score: 2
 		}
 	]
 
@@ -18,12 +25,14 @@ const ScoreList = () => {
 		<table>
 			<thead>
 				<tr>
-					<td>Name</td>
-					<td>Score</td>
+					<th>Name</th>
+					<th>Score</th>
 				</tr>
 
 			</thead>
-			{scoreItems.map(e => <ScoreItem obj={e}/>)}
+			<tbody>
+				{scoreItems.map((e, i) => <ScoreItem key={`scoreitem${i}`} obj={e} ind={i} />)}
+			</tbody>
 		</table>
 	)
 }
