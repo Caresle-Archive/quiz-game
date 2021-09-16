@@ -75,6 +75,7 @@ const scoreData = () => {
 const main = async () => {
 	await mongoose.connect(uri)
 	console.log('db connected')
+	console.log('Close this when question and score created message show')
 	questionData()
 	scoreData()
 }
