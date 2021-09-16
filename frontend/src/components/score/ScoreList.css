@@ -18,3 +18,10 @@ th {
 	background-color: var(--gray);
 }
 
+#restart {
+	display: flex;
+	justify-self: center;
+	justify-content: center;
+	font-weight: 700;
+	font-size: 1rem;
+}

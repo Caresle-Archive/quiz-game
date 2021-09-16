@@ -3,7 +3,7 @@ import './ScoreList.css'
 import { useEffect, useState } from "react"
 
 
-const ScoreList = () => {
+const ScoreList = ({restartGame}) => {
 	const urlScores = 'http://localhost:3001/api/v1/topscores'
 	const [scoreItems, setScoreItems] = useState([])
 	useEffect(() => {
@@ -13,19 +13,22 @@ const ScoreList = () => {
 	}, [])
 
 	return (
-		<table>
-			<thead>
-				<tr>
-					<th>#</th>
-					<th>Name</th>
-					<th>Score</th>
-				</tr>
+		<div>
+			<table>
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Name</th>
+						<th>Score</th>
+					</tr>
 
-			</thead>
-			<tbody>
-				{scoreItems.map((e, i) => <ScoreItem key={`scoreitem${i}`} obj={e} ind={i} />)}
-			</tbody>
-		</table>
+				</thead>
+				<tbody>
+					{scoreItems.map((e, i) => <ScoreItem key={`scoreitem${i}`} obj={e} ind={i} />)}
+				</tbody>
+			</table>
+			<button id="restart" className="btn" onClick={restartGame}>New game</button>
+		</div>
 	)
 }
 

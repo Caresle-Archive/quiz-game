@@ -45,6 +45,12 @@ const App = () => {
     }
   }
   
+  const restartGame = () => {
+    setScoreValue(0)
+    setScoreRender(false)
+    setCurrentQuestion(0)
+  }
+
   if (currentQuestion < 0 && !scoreRender) {
     render = <h1>Loading question</h1>
   } else if (!scoreRender){
@@ -56,7 +62,7 @@ const App = () => {
       </div>
     )
   } else {
-    render = <ScoreManager scoreValue={scoreValue} />
+    render = <ScoreManager scoreValue={scoreValue} restartGame={restartGame}/>
   }
   return render
 }

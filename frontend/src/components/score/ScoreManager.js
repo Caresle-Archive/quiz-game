@@ -2,7 +2,7 @@ import { useState } from "react"
 import ScoreForm from "./ScoreForm"
 import ScoreList from "./ScoreList"
 
-const ScoreManager = ({ scoreValue }) => {
+const ScoreManager = ({ scoreValue, restartGame }) => {
 	const [showScoreList, setShowScoreList] = useState(false)
 	const scoreListUnhidden = () => {
 		setShowScoreList(true)
@@ -11,7 +11,7 @@ const ScoreManager = ({ scoreValue }) => {
 	if (!showScoreList)
 		return <ScoreForm changeToList={scoreListUnhidden} scoreValue={scoreValue}/>
 	else
-		return <ScoreList />
+		return <ScoreList restartGame={restartGame}/>
 }
 
 export default ScoreManager

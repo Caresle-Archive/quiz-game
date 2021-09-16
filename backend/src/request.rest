@@ -4,6 +4,10 @@ GET http://localhost:3001/api/v1/questions
 ###
 GET http://localhost:3001/api/v1/scores
 
+
+###
+GET http://localhost:3001/api/v1/topscores
+
 ###
 POST http://localhost:3001/api/v1/scores
 Content-Type: application/json
